@@ -5,7 +5,16 @@ export default function Cards(props) {
    return (
       <div>
          {
-            characters.map((character) => <Card name = {character.name} species = {character.species} gender = {character.gender} image = {character.image} onClose = {character.onClose} />)
+            characters.map(({name,species,gender,image},index)=>{
+               return <Card 
+                  key={index}
+                  name={name}
+                  species={species}
+                  gender={gender}
+                  image={image}
+                  onClose={()=> window.alert("Emulamos que se cierra la card")}
+               />
+            })
          }
       </div>
    );
