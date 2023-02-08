@@ -8,7 +8,7 @@ Esta es una app full stack de cards desarrollada con Node.js consumiendo la API 
 
 <img alt="Draw" align="right" height="300"  width="300" src="./rick-and-morty.png" />
 
-## Herramientas usadas
+## Tecnologías usadas
 ### Frontend
 * React
 * HTML
