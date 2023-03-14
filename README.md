@@ -4,7 +4,7 @@
 
 # Acerca de la App
 
-Esta es una app full stack de cards desarrollada con Node.js consumiendo la API de rick and morty https://rickandmortyapi.com/. Está basada en los principios REST con una database no relacional
+Esta es una app full stack de cards desarrollado con el Stack MERN consumiendo la API de rick and morty https://rickandmortyapi.com/. Basada en principios REST.
 
 <img alt="Draw" align="right" height="300"  width="300" src="./rick-and-morty.png" />
 
