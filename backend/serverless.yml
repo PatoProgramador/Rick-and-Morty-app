@@ -10,3 +10,9 @@ functions:
     handler: index.handler
     events:
       - httpApi: '*'
+  api2:
+    handler: index2.handler
+    events:
+      - http:
+         path: /
+         method: get
