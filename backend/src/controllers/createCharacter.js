@@ -37,7 +37,7 @@ const createCharacter = async (event) => {
         return {
             statusCode: 200,
             body: JSON.stringify({
-                "message": `El personaje ${newCharacter.name} fue creado correctamente :)`
+                "message": `personaje <${newCharacter.name}> creado correctamente :)`
             })
         };
     } catch (error) {
