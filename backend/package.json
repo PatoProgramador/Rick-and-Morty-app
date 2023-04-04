@@ -1,9 +1,31 @@
 {
-  "name": "backend",
+  "name": "backend-test",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatoProgramador/backend-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatoProgramador/backend-test/issues"
+  },
+  "homepage": "https://github.com/PatoProgramador/backend-test#readme",
   "dependencies": {
-    "express": "^4.18.2",
-    "serverless-http": "^3.1.1"
+    "@middy/core": "^4.2.7",
+    "@middy/http-json-body-parser": "^4.2.7",
+    "@middy/http-multipart-body-parser": "^4.2.7",
+    "@middy/http-urlencode-body-parser": "^4.2.7",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^12.0.4"
   }
 }
