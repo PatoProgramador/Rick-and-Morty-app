@@ -20,4 +20,10 @@ functions:
     events:
       - httpApi:
           path: /characters
-          method: get 
+          method: get
+  createCharacter:
+    handler: src/controllers/createCharacter.createCharacter
+    events:
+      - httpApi:
+          path: /characters
+          method: post 
