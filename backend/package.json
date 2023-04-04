@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/PatoProgramador/backend-test#readme",
   "dependencies": {
-    "@middy/core": "^4.2.7",
-    "@middy/http-json-body-parser": "^4.2.7",
+    "@middy/core": "^4.2.8",
+    "@middy/http-json-body-parser": "^4.2.8",
     "@middy/http-multipart-body-parser": "^4.2.7",
     "@middy/http-urlencode-body-parser": "^4.2.7",
     "dotenv": "^16.0.3",
