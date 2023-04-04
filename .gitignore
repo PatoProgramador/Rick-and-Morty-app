@@ -1,9 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# package directories
 /node_modules
 /.pnp
 .pnp.js
+jspm_packages
 
 # testing
 /coverage
@@ -17,7 +16,11 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Serverless directories
+.serverless
