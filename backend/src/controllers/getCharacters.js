@@ -1,18 +1,7 @@
-const { mongoConect } = require("../../config/mongodb");
-
-const getCharacters = async (event) => {
+export const getCharacters = async (req, res) => {
     try {
-        mongoConect(process.env.MONGO_URI);
-        return {
-            statusCode: 200,
-            body: JSON.stringify("Holi")
-        }
+        return res.status(200).json("Holas")
     } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ "Error": error })
-        };
+        return res.status(400).json("D;")
     }
 };
-
-module.exports = { getCharacters };

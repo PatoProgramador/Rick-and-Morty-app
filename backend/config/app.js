@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import characterRouter from "../src/routes/characterRouter.js";
 
 const app = express();
 
@@ -15,6 +16,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use("/", (req, res) => res.send("Hola"))
+app.use("/characters", characterRouter)
 
 export default app;
