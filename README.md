@@ -17,6 +17,4 @@ Esta es una app full stack de cards desarrollado con el Stack MERN consumiendo l
 ### Backend:
 * Nodejs
 * Express
-* Serverless-Framework
-* AWS api Gateway- AWS lambda
 * Mongodb-mongoose
