@@ -1,19 +1,15 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
 
-let conn = null;
-
-const mongoConect = async function(uri) {
-  if (conn == null) {
-    conn = mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 5000
-    }).then(() => mongoose);
-
-    // `await`ing connection after assigning to the `conn` variable
-    // to avoid multiple function calls creating new connections
-    await conn;
-  }
-
-  return conn;
+export async function connectDB() {
+    try {
+        const conn = await mongoose.connect(process.env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
+        console.log(`Conection to ${conn.connection.name} database established`)
+    } catch (error) {
+        console.log(error)
+    }
 };
-
-module.exports = { mongoConect}

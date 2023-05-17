@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,15 +18,8 @@
   },
   "homepage": "https://github.com/PatoProgramador/backend-test#readme",
   "dependencies": {
-    "@middy/core": "^4.2.8",
-    "@middy/http-json-body-parser": "^4.2.8",
-    "@middy/http-multipart-body-parser": "^4.2.7",
-    "@middy/http-urlencode-body-parser": "^4.2.7",
     "dotenv": "^16.0.3",
-    "mongoose": "^7.0.3"
-  },
-  "devDependencies": {
-    "serverless-dotenv-plugin": "^6.0.0",
-    "serverless-offline": "^12.0.4"
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0"
   }
 }
