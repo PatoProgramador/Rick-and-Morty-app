@@ -10,8 +10,6 @@ const createCharacter = async (event) => {
     };
     const { name, img, status, gender, origin, location  } = event.body;
     try {
-        mongoConect(process.env.MONGO_URI);
-
         const validate = {
             name,
             img,
