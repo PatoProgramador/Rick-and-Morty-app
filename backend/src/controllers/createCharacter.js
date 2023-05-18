@@ -1,14 +1,9 @@
-const { mongoConect } = require("../../config/mongodb");
-const character = require('../../models/Character');
-const middy = require("@middy/core");
-const jsonBodyParser = require("@middy/http-json-body-parser");
+import Character from "../../models/Character.js";
 
-const createCharacter = async (event) => {
-    if(!event.body) return {
-        statusCode: 400,
-        body: JSON.stringify({"error": "Debes pasar los campos necesarios para crear el personaje"})
-    };
-    const { name, img, status, gender, origin, location  } = event.body;
+export const createCharacter = async (req, res) => {
+    if(!req.body) throw new Error('Debes pasar los campos necesarios para crear el personaje');
+
+    const { name, img, status, gender, origin, location  } = req.body;
     try {
         const validate = {
             name,
@@ -21,7 +16,7 @@ const createCharacter = async (event) => {
 
         for(const key in validate) {
             const element = validate[key];
-            if(!element && key !== "gender" && key !== "location") {
+            if(!element && key !== "gender" && key !== "location" && key !== "img") {
                 return {
                     statusCode: 400,
                     body: JSON.stringify({ "error": `El campo ${key} no puede estar vacío` })
@@ -29,24 +24,11 @@ const createCharacter = async (event) => {
             }
         };
 
-        const newCharacter = new character(validate);
+        const newCharacter = new Character(validate);
         await newCharacter.save();
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                "message": `personaje <${newCharacter.name}> creado correctamente :)`
-            })
-        };
+        return res.status(200).json(newCharacter)
     } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ "error": error })
-        };
+        return res.status(400).json(error.message)
     }
-};
-
-module.exports = {
-    createCharacter: middy(createCharacter)
-    .use(jsonBodyParser()) 
 };

@@ -8,7 +8,6 @@ const userSchema = new Schema(
         },
         img: {
             type: String,
-            required: true
         },
         status: {
             type: String,
