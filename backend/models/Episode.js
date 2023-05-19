@@ -22,7 +22,7 @@ const episodeSchema = new Schema(
             required: true
         },
         characters: {
-            type: [{id: mongoose.ObjectID, name: String}]
+            type: [{id: mongoose.Schema.Types.ObjectId, name: String}]
         }
     }, {
         versionKey: false,

@@ -1,8 +1,8 @@
 import express from "express";
-import { getAllCharacters, getCharacterById } from "../controllers/getCharacters.js";
-import { createCharacter } from "../controllers/createCharacter.js";
-import { updateCharacter } from "../controllers/updateCharacter.js";
-import { deleteCharacter } from "../controllers/deleteCharacter.js";
+import { getAllCharacters, getCharacterById } from "../controllers/character/getCharacters.js";
+import { createCharacter } from "../controllers/character/createCharacter.js";
+import { updateCharacter } from "../controllers/character/updateCharacter.js";
+import { deleteCharacter } from "../controllers/character/deleteCharacter.js";
 
 const characterRouter = express.Router();
 

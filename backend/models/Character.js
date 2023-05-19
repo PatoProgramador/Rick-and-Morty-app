@@ -1,4 +1,4 @@
-import { Schema, model} from "mongoose"
+import mongoose, { Schema, model } from "mongoose"
 
 const userSchema = new Schema(
     {   
@@ -25,7 +25,7 @@ const userSchema = new Schema(
         },
         origin: {
             id: {
-                type: mongoose.ObjectID
+                type: mongoose.Schema.Types.ObjectId
             },
             name: {
                 type: String
@@ -33,13 +33,13 @@ const userSchema = new Schema(
         },
         location: {
             id: {
-                type: mongoose.ObjectID
+                type: mongoose.Schema.Types.ObjectId
             },
             name: {
                 type: String
             }
         },
-        episodes: [{id: mongoose.ObjectID, name: String}]
+        episodes: [{id: mongoose.Schema.Types.ObjectId, name: String}]
     }, {
         versionKey: false,
         timestamps: true

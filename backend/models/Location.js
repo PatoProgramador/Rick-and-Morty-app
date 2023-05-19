@@ -17,10 +17,12 @@ const locationSchema = new Schema(
             type: String
         },
         residents: {
-            type: [{id: mongoose.ObjectID, name: String}]
+            type: [{id: mongoose.Schema.Types.ObjectId, name: String}]
         }
     }, {
         versionKey: false,
         timestamps: true
     }
 )
+
+export default model('location', locationSchema)
