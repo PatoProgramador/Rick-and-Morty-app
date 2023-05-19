@@ -14,13 +14,11 @@ export const createCharacter = async (req, res) => {
             location
         };
 
+        // validacion de campos necesarios
         for(const key in validate) {
             const element = validate[key];
             if(!element && key !== "gender" && key !== "location" && key !== "img") {
-                return {
-                    statusCode: 400,
-                    body: JSON.stringify({ "error": `El campo ${key} no puede estar vacío` })
-                };
+                throw new Error(`El campo -${key}- no puede estar vacío`)
             }
         };
 
