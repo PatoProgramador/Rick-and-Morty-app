@@ -1,6 +1,4 @@
-import Character from "../../models/Character.js";
-
-
+import Character from "../../../models/Character.js";
 
 export const getAllCharacters = async (req, res) => {
     try {

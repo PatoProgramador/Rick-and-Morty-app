@@ -1,4 +1,4 @@
-import Character from "../../models/Character.js";
+import Character from "../../../models/Character.js";
 
 export const deleteCharacter = async(req, res) => {
     const { id } = req.params;

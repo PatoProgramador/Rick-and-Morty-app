@@ -1,4 +1,4 @@
-import Character from "../../models/Character.js";
+import Character from "../../../models/Character.js";
 
 export const createCharacter = async (req, res) => {
     if(!req.body) throw new Error('Debes pasar los campos necesarios para crear el personaje');
