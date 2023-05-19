@@ -13,7 +13,7 @@ export const getAllCharacters = async (req, res) => {
 };
 
 export const getCharacterById = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
     try {
         const charac = await Character.findById(id).exec();
         return res.status(200).json(charac)
