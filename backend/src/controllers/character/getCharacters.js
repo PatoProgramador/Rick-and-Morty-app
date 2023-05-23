@@ -70,5 +70,5 @@ export const getCharacterById = async (req, res) => {
     });
 
     -- insertando todos los documentos en el modelo --
-    Character.insertMany(charArr);
+    await Character.insertMany(charArr);
 */

@@ -25,16 +25,12 @@ export const getAllEpisodes = async (req, res) => {
         apiUrls = [...apiUrls, `https://rickandmortyapi.com/api/episode?page=${i}`]
     }
 
-    -- fetch de todos los personajes en la API --
-    let charArr = apiUrls.map((url) => axios.get(url));
-    charArr = await Promise.all(charArr);
-    charArr = charArr?.map((response) => response.data.results).flat();
-
-    -- modificando el array de acuerdo al modelo --
+    -- fetch de todos los episodes en la API --
     let epiArr = apiUrls.map((url) => axios.get(url));
     epiArr = await Promise.all(epiArr);
     epiArr = epiArr?.map((response) => response.data.results).flat();
-    
+
+    -- modificando el array de acuerdo al modelo --
     epiArr = epiArr?.map((episode) => {
         return {
             apiID: episode.id,
@@ -46,5 +42,5 @@ export const getAllEpisodes = async (req, res) => {
     });
 
     -- insertando todos los documentos en el modelo --
-    Episode.insertMany(epiArr);
+    await Episode.insertMany(epiArr);
 */

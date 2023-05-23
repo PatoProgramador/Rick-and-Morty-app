@@ -3,6 +3,7 @@ import morgan from "morgan";
 import characterRouter from "../src/routes/characterRouter.js";
 import mainRouter from "../src/routes/mainRouter.js";
 import episodeRouter from "../src/routes/episodeRouter.js";
+import locationRouter from "../src/routes/locationRouter.js";
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use((req, res, next) => {
 app.use("/", mainRouter);
 app.use("/characters", characterRouter);
 app.use("/episodes", episodeRouter);
+app.use("/locations", locationRouter);
 
 export default app;
