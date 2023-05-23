@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import characterRouter from "../src/routes/characterRouter.js";
 import mainRouter from "../src/routes/mainRouter.js";
+import episodeRouter from "../src/routes/episodeRuter.js";
 
 const app = express();
 
@@ -18,7 +19,8 @@ app.use((req, res, next) => {
 });
 
 // Rutas
-app.use("/", mainRouter)
-app.use("/characters", characterRouter)
+app.use("/", mainRouter);
+app.use("/characters", characterRouter);
+app.use("/episodes", episodeRouter);
 
 export default app;
