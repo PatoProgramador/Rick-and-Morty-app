@@ -9,7 +9,7 @@ const characterRouter = express.Router();
 characterRouter.get("/", getAllCharacters);
 characterRouter.get("/:id", getCharacterById);
 characterRouter.put("/:id", updateCharacter);
-characterRouter.delete("/:id", deleteCharacter)
+characterRouter.delete("/:id", deleteCharacter);
 characterRouter.post("/", createCharacter);
 
 export default characterRouter;
