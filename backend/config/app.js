@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import characterRouter from "../src/routes/characterRouter.js";
 import mainRouter from "../src/routes/mainRouter.js";
-import episodeRouter from "../src/routes/episodeRuter.js";
+import episodeRouter from "../src/routes/episodeRouter.js";
 
 const app = express();
 

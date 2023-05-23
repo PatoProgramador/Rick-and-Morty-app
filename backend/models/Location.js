@@ -17,7 +17,8 @@ const locationSchema = new Schema(
             type: String
         },
         residents: {
-            type: [{id: mongoose.Schema.Types.ObjectId, name: String}]
+            type: [String]
+            //type: [{id: mongoose.Schema.Types.ObjectId, name: String}]
         }
     }, {
         versionKey: false,
