@@ -29,7 +29,10 @@ const userSchema = new Schema(
             },
             name: {
                 type: String
-            }
+            },
+            apiUrl: {
+                type: String
+            },
         },
         location: {
             id: {
@@ -37,9 +40,13 @@ const userSchema = new Schema(
             },
             name: {
                 type: String
+            },
+            apiUrl: {
+                type: String
             }
         },
-        episodes: [{id: mongoose.Schema.Types.ObjectId, name: String}]
+        episodes: [String]
+        //episode: [{id: mongoose.Schema.Types.ObjectId, name: String}]
     }, {
         versionKey: false,
         timestamps: true

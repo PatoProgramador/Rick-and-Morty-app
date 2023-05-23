@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/PatoProgramador/backend-test#readme",
   "dependencies": {
+    "axios": "^1.4.0",
     "dotenv": "^16.0.3",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
