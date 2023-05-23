@@ -8,8 +8,8 @@ export const getAllCharacters = async (req, res) => {
         limit: 10
     };
     try {
-        let updateChars = await Character.find({});
-        return res.status(200).json(updateChars)
+        let characters = await Character.paginate({}, options);
+        return res.status(200).json(characters)
     } catch (error) {
         return res.status(400).json(error.message)
     }
