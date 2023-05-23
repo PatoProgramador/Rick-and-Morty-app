@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import characterRouter from "../src/routes/characterRouter.js";
+import mainRouter from "../src/routes/mainRouter.js";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use((req, res, next) => {
     next();
 });
 
+// Rutas
+app.use("/", mainRouter)
 app.use("/characters", characterRouter)
 
 export default app;
