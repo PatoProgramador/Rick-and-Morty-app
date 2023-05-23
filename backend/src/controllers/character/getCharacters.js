@@ -1,13 +1,17 @@
 import Character from "../../../models/Character.js";
 
 export const getAllCharacters = async (req, res) => {
+    let options = {
+        page: 1,
+        limit: 10
+    };
     try {
-        const characters = await Character.find({});
-        if (characters.length === 0) {
+        const characters = await Character.paginate({}, options);
+        if (characters.docs.length === 0) {
             throw new Error('No existen personajes en la base de datos aún');
         }
 
-        return res.status(200).json({ characters })
+        return res.status(200).json(characters)
     } catch (error) {
         return res.status(400).json(error.message)
     }
