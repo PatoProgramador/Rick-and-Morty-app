@@ -7,8 +7,8 @@ export const getAllEpisodes = async (req, res) => {
         limit: 10
     };
     try {
-        
-        let episodes = await Episode.paginate({}, options)
+        let episodes = await Episode.paginate({}, options);
+
         return res.status(200).json(episodes);
     } catch (error) {
         return res.status(400).json(error.message);
