@@ -54,9 +54,11 @@ export const getAllEpisodes = async (req, res) => {
 
 -- Codigo actualizar los episodes con la simulacion de la relacion en mongo con los charac--
 
--- En este codigo se buscan todos los episodios y se comparan con el array de episodes que tiene 
--- cada character, cada url contiene al final el id de cada episodio por lo que no es necesario 
--- un axios, sino hacer un split y buscar en los docs de episodios
+-- En este codigo se buscan todos los episodes y se hace split de todas las url que tiene en su propiedad
+-- characters, debido a que el numero al final de cada url es el id de cada character en la api, asi, se
+-- busca cada character de la db por su apiID y se reemplazan datos para finalizar con un array
+-- listo para actualizar todas los location de la db
+ 
 
         let characters = await Character.find({});
         let episodes = await Episode.find({});
