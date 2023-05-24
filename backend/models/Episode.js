@@ -1,4 +1,4 @@
-import mongoose, { Schema, model } from "mongoose";
+import { Schema, model } from "mongoose";
 import mongooosePaginate from 'mongoose-paginate';
 
 const episodeSchema = new Schema(
@@ -23,8 +23,7 @@ const episodeSchema = new Schema(
             required: true
         },
         characters: {
-            type: [String]
-            // type: [{id: mongoose.Schema.Types.ObjectId, name: String}]
+            type: [Object]
         }
     }, {
         versionKey: false,

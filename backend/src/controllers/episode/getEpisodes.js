@@ -1,8 +1,14 @@
 import Episode from "../../../models/Episode.js";
+// import Character from "../../../models/Character.js";
 
 export const getAllEpisodes = async (req, res) => {
+    let options = {
+        page: 1,
+        limit: 10
+    };
     try {
-        const episodes = await Episode.find({});
+        let episodes = await Episode.paginate({}, options);
+
         return res.status(200).json(episodes);
     } catch (error) {
         return res.status(400).json(error.message);
@@ -43,4 +49,53 @@ export const getAllEpisodes = async (req, res) => {
 
     -- insertando todos los documentos en el modelo --
     await Episode.insertMany(epiArr);
+
+
+
+-- Codigo actualizar los episodes con la simulacion de la relacion en mongo con los charac--
+
+-- En este codigo se buscan todos los episodios y se comparan con el array de episodes que tiene 
+-- cada character, cada url contiene al final el id de cada episodio por lo que no es necesario 
+-- un axios, sino hacer un split y buscar en los docs de episodios
+
+        let characters = await Character.find({});
+        let episodes = await Episode.find({});
+        characters = characters.map((char) => {
+            return {
+                id: char._id,
+                apiID: char.apiID,
+                name: char.name,
+            }
+        })
+
+        episodes = episodes.map((charac) => {
+            let parserCharacters = charac.characters.map((url) => {
+                const parts = url.split("/");
+                return parseInt(parts[parts.length - 1]);
+            })
+            return {
+                id: charac._id,
+                characters: parserCharacters
+            }
+        });
+
+        episodes.forEach((epis) => {
+            epis.characters = epis.characters.map((characterID) => {
+                const charact = characters.find((cha) => cha.apiID === characterID);
+                if(charact) {
+                    return {
+                        id: charact.id,
+                        apiID: charact.apiID,
+                        name: charact.name,
+                    }
+                }
+                return null;
+            }).filter(Boolean)
+        })
+        for (const key in episodes) {
+            let id = episodes[key].id;
+            let update = episodes[key].characters;
+            let doc = await Episode.findOneAndUpdate({ _id: id }, {characters: update});
+            console.log(doc)
+        }
 */

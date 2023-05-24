@@ -71,7 +71,7 @@ export const getCharacterById = async (req, res) => {
     await Character.insertMany(charArr);
 
 
--- Codigo actualizar los characters con la simulacion de la relacion en mongo con el origin--
+-- Codigo actualizar los characters con la simulacion de la relacion en mongo con los episodes--
 
 -- En este codigo se buscan todos los episodios y se comparan con el array de episodes que tiene 
 -- cada character, cada url contiene al final el id de cada episodio por lo que no es necesario 
