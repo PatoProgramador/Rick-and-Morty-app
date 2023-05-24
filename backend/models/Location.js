@@ -1,4 +1,5 @@
-import mongoose, { Schema, model } from "mongoose"
+import { Schema, model } from "mongoose";
+import mongooosePaginate from 'mongoose-paginate';
 
 const locationSchema = new Schema(
     {
@@ -17,13 +18,14 @@ const locationSchema = new Schema(
             type: String
         },
         residents: {
-            type: [String]
-            //type: [{id: mongoose.Schema.Types.ObjectId, name: String}]
+            type: [Object]
         }
     }, {
         versionKey: false,
         timestamps: true
     }
-)
+);
+
+locationSchema.plugin(mongooosePaginate);
 
 export default model('location', locationSchema)
