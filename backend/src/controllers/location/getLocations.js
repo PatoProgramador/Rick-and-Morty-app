@@ -1,5 +1,5 @@
 import Location from '../../../models/Location.js';
-import Character from "../../../models/Character.js";
+// import Character from "../../../models/Character.js";
 
 export const getAllLocations = async(req, res) => {
     let options = {
@@ -15,6 +15,15 @@ export const getAllLocations = async(req, res) => {
     }
 };
 
+export const getLocationById = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const local = await Location.findById(id).exec();
+        return res.status(200).json(local);
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+};
 /* 
 -- Codigo para poblar la database con las location de la API--
 
