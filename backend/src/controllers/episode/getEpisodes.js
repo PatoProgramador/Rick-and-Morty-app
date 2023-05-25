@@ -15,6 +15,16 @@ export const getAllEpisodes = async (req, res) => {
     }
 };
 
+export const getEpisodeById = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const epi = await Episode.findById(id).exec();
+        return res.status(200).json(epi)
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+};
+
 /* 
 -- Codigo para poblar la database con los episodes de la API--
 
