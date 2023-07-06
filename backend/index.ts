@@ -20,7 +20,7 @@
 import app from "./config/app.js";
 import { connectDB } from "./config/mongodb.js";
 import mongoose from "mongoose";
-const PORT = process.env.PORT | 3500
+const PORT: number = process.env.PORT | 3500
 
 connectDB()
 mongoose.connection.once('open', () => {
