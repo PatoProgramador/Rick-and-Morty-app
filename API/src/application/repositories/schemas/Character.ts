@@ -12,7 +12,7 @@ const userSchema = new Schema(
       required: true
     },
     img: {
-      type: String,
+      type: String
     },
     status: {
       type: String,
@@ -42,10 +42,10 @@ const userSchema = new Schema(
     },
     episodes: [Object]
   }, {
-  versionKey: false,
-  timestamps: true
-}
-);
+    versionKey: false,
+    timestamps: true
+  }
+)
 
 userSchema.plugin(mongoosePaginate)
 

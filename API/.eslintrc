@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-constant-condition": "warn"
+  },
+  "ignorePatterns": [
+    ".env",
+    "tsconfig.json",
+    "./dist",
+    "./node_modules"
+  ]
+}

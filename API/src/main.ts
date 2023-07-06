@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 import { startServer } from './app'
-import { connectDB } from './modules/repositories/app.mongoose-connect'
+import { connectDB } from './application/repositories/app.mongoose-connect'
 import mongoose from 'mongoose'
 import { router } from './modules'
 
