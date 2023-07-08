@@ -16,6 +16,14 @@ class CharacterService {
 
     return res
   }
+
+  async getCharacterById (id:string): Promise<Document<ICharacterInfoDto>> {
+    const res = await Character.findById(id).exec()
+
+    if (!res) throw new Error('Aún no hay cuentas en la base de datos')
+
+    return res
+  }
 }
 
 export default new CharacterService()
