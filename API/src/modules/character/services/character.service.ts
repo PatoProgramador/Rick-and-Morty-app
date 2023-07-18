@@ -24,6 +24,11 @@ class CharacterService {
 
     return res
   }
+
+  async createCharacter (character: ICharacterInfoDto) {
+    const res = await Character.create(character)
+    return res
+  }
 }
 
 export default new CharacterService()

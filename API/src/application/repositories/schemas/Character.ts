@@ -40,7 +40,11 @@ const userSchema = new Schema(
         type: String
       }
     },
-    episodes: [Object]
+    episodes: [Object],
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   }, {
     versionKey: false,
     timestamps: true

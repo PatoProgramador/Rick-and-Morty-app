@@ -26,11 +26,25 @@ export const characterController = async ({ api, router }: { api: string; router
 
     .get(`${route}/getCharacterById/:id`, async (req, res) => {
       const result = new AppResponse<Document<ICharacterInfoDto>>()
-      console.log("hola")
       const { id } = req.params
 
       try {
         result.response = await characterService.getCharacterById(id)
+
+        return res.status(200).json(result)
+      } catch (err) {
+        result.message = String(err)
+
+        return res.status(500).json(result)
+      }
+    })
+
+    .post(`${route}/createCharacter`, async (req, res) => {
+      const result = new AppResponse<Document<ICharacterInfoDto>>()
+      const {  } = req.body
+
+      try {
+        result.response = await characterService.createCharacter()
 
         return res.status(200).json(result)
       } catch (err) {
